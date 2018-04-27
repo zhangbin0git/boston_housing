@@ -10,6 +10,7 @@ get_ipython().run_line_magic('matplotlib', 'inline')
 ###########################################
 
 import matplotlib.pyplot as pl
+import pandas as pd
 import numpy as np
 from sklearn.model_selection import learning_curve, validation_curve
 from sklearn.tree import DecisionTreeRegressor
@@ -130,3 +131,5 @@ def PredictTrials(X, y, fitter, data):
 
     # Display price range
     print "\nRange in prices: ${:,.2f}".format(max(prices) - min(prices))
+    prices1 = pd.Series(prices)
+    print prices1.describe()
